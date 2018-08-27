@@ -1,0 +1,35 @@
+﻿@model Homecare_Eksame_project.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.userFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userFullName)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Role.roleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role.roleName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.userID }) |
+    @Html.ActionLink("Back to List", "UserList")
+</p>

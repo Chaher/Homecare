@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HomecareModelStoreContainer" CdmEntityContainer="HomecareEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="HomecareModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="koen" ColumnName="koen" />
+          <ScalarProperty Name="alder" ColumnName="alder" />
+          <ScalarProperty Name="byen" ColumnName="byen" />
+          <ScalarProperty Name="postnr" ColumnName="postnr" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="customerFullName" ColumnName="customerFullName" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrivingPlans">
+      <EntityTypeMapping TypeName="HomecareModel.DrivingPlan">
+        <MappingFragment StoreEntitySet="DrivingPlan">
+          <ScalarProperty Name="isDone" ColumnName="isDone" />
+          <ScalarProperty Name="drivingDate" ColumnName="drivingDate" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+          <ScalarProperty Name="drivingID" ColumnName="drivingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="HomecareModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="worked" ColumnName="worked" />
+          <ScalarProperty Name="sick" ColumnName="sick" />
+          <ScalarProperty Name="workSchedule" ColumnName="workSchedule" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="employeeFullName" ColumnName="employeeFullName" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="HomecareModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HomecareModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="userFullName" ColumnName="userFullName" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

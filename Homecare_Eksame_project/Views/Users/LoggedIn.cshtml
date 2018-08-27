@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "LoggedIn";
+}
+
+@if (Session["UserId"] != null)
+{
+    <h4 class="test" style="margin-top:20px;">You log on as an  @Session["RoleID"].ToString()</h4>
+    <a href="@Url.Action("LogOut", "Users")">
+        <i class="glyphicon glyphicon-log-out"></i>
+        Logout
+    </a>}

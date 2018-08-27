@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Homecare_Eksame_project.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.customerFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postnr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.byen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.koen)
+        </th>
+        <th>
+            Plnas
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postnr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.byen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.koen)
+        </td>
+        <td>
+            @* Count all driving plans for this customer *@
+            @item.DrivingPlans.Count
+            @* Count all active (not done) driving plans for this customer *@
+            (Active: @item.DrivingPlans.Count(x => x.isDone != true))
+        </td>
+        <td>
+            @* Link to cusomter's driving plans. *@
+            @Html.ActionLink("Plans", "Index", "DrivingPlans", routeValues: new { customerID = item.customerID }, htmlAttributes: new { }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.customerID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.customerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.customerID })
+        </td>
+    </tr>
+}
+
+</table>

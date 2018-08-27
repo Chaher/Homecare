@@ -1,0 +1,66 @@
+﻿@model Homecare_Eksame_project.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.customerFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.street)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.street)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postnr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postnr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.byen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.byen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.koen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.koen)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.customerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

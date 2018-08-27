@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Homecare_Eksame_project.Models.User>
+
+@{
+    ViewBag.Title = "UserList";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New User", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.userFullName)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Role.roleName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.userFullName)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Role.roleName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.userID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.userID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.userID })
+        </td>
+    </tr>
+}
+
+</table>

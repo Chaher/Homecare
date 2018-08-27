@@ -1,0 +1,50 @@
+﻿@model Homecare_Eksame_project.Models.DrivingPlan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DrivingPlan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.drivingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.drivingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isDone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isDone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.customerFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.customerFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.employeeFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.employeeFullName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.drivingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Homecare_Eksame_project.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>
+    Index
+</h2>
+<p>
+    Filter:
+    <a href="?roleID=">All</a>
+    /
+    <a href="?roleID=2">Drivers</a>
+</p>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.employeeFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.workSchedule)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sick)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.worked)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.userFullName)
+        </th>
+        <th>Role</th>
+        <th>Active Plans</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeeFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.workSchedule)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sick)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.worked)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.userFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Role.roleName)
+            </td>
+            <td>
+                @item.DrivingPlans.Count
+            </td>
+            <td>
+                @Html.ActionLink("Plans", "Index", "DrivingPlans", routeValues: new { employeeID = item.employeeID }, htmlAttributes: new { }) |
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.employeeID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.employeeID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.employeeID })
+            </td>
+        </tr>
+    }
+
+</table>

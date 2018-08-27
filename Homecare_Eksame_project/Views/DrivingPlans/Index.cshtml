@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Homecare_Eksame_project.Models.DrivingPlan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @if ((string)Session["RoleID"] == "admin")
+    {
+        @* When the index is filtered for a customer or employee, add the id to the create link pre-select the employee or the customer from the drop down. read more DrivingPlansController > Action Create *@
+        @Html.ActionLink("Create New", "Create", new { customerID = Request["customerID"], employeeID = Request["employeeID"] })
+
+    }
+    else
+    {
+        <span>An overview of your driving plans</span>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.drivingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isDone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.customerFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.employeeFullName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.drivingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isDone, new { @disabled = true })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.customerFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.employeeFullName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.drivingID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.drivingID })
+                @if ((string)Session["RoleID"] == "admin")
+                {
+                    <span>|</span>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.drivingID })
+
+                }
+
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,108 @@
+﻿body {
+    background-color: #eff6fb !important;
+}
+
+
+a {
+    /*color: #fff !important;*/
+}
+
+
+/*header*/
+.navbar-inverse {
+    background-color: #eff6fb !important;
+    border-color: #000000 !important;
+    border-bottom: 5px solid #f39090 !important;
+}
+/*Log Ind Button*/
+.LoginBtn {
+    background-color: #f2bdbd;
+    color: black;
+}
+
+    .LoginBtn:hover {
+        background-color: #696969;
+        font-size: 16px;
+        color: aliceblue !important;
+        border: 2px solid white !important;
+    }
+
+footer {
+    /*position: absolute;*/
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    background-color: #eff6fb;
+    border-color: #000000;
+    border-top: 5px solid #f39090;
+}
+
+.form-control {
+    text-shadow: 5px 5px 12px black, 0 0 25px pink, 0 0 15px red;
+}
+
+.form-control {
+    font-size: 1.5em;
+    color: #228DFF;
+    font-family: Iceland;
+}
+
+    .form-control:hover {
+        -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+        -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+        animation: neon2 1.5s ease-in-out infinite alternate;
+    }
+
+@-webkit-keyframes neon2 {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+    }
+
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+    }
+}
+
+/*homecare*/
+.navbar-brand {
+    font-size: 46px !important;
+}
+
+
+/*text input fields*/
+.navbar-header {
+    /*text-shadow: 5px 5px 12px black, 0 0 25px pink, 0 0 15px red;*/
+}
+
+.navbar-header {
+    font-size: 5.5em;
+    color: #228DFF;
+    font-family: Iceland;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #000 !important;
+    transition: color 0.3s ease-in-out;
+}
+/*.navbar-header:hover {
+        -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+        -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+        animation: neon2 1.5s ease-in-out infinite alternate;
+    }*/
+@-webkit-keyframes neon2 {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+    }
+
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+    }
+}
+
+.menu1 {
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+}

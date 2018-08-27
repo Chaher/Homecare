@@ -1,0 +1,87 @@
+﻿@{
+    if (Request.IsAuthenticated && Session["UserID"] == null) { Response.Redirect("/users/logout", true); }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Homecare</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/MyStyle.css" rel="stylesheet" />
+
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Homecare", "Index", "Users", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="menu1">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li>
+                                <a href="@Url.Action("Index","DrivingPlans")">
+                                    <i class="glyphicon glyphicon-road"></i>
+                                    Driving Plans
+                                </a>
+                            </li>
+                            if ((string)Session["RoleID"] == "admin")
+                            {
+                                <li>
+                                    <a href="@Url.Action("Index","Customers")">
+                                        <i class="glyphicon glyphicon-road"></i>
+                                        Customers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index","Employees")">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                        Employee
+                                    </a>
+                                </li>
+                            }
+                            <li>
+                                <a href="@Url.Action("LogOut", "Users")">
+                                    <i class="glyphicon "></i>
+                                    Logout
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+
+                                    <i class="glyphicon"></i>
+                                    You are logged in as  @Session["RoleID"]
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+
+
+    </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Homecare Albertslund kommune. </p><br />
+        <p>Contact Admintration : admin@homecare.dk tlf.0045000000</p>
+    </footer>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
